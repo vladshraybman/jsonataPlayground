@@ -1,0 +1,115 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.layout-selector {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.layout-selector label {
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.pair-selector {  /* NEW pair selector styles */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.pair-selector label {
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+
+.template-buttons {
+    display: flex;
+}
+
+.template-buttons button {
+    margin-left: 5px;
+}
+
+.transformation-type-selector {
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.top-rows {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.row {
+    display: flex;
+    flex: 1 1 50%;
+}
+
+.input-json-data-area,
+.jsonata-expression-area,
+.post-jsonata-output-area,
+.desired-output-area {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    border-style: groove;
+    border-width: thin;
+}
+
+.monaco-editor {
+    position: absolute !important;
+}
+
+.resizeable-editor {
+    height: 95%;
+}
+
+.diff-area {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: calc(100% - 30px);
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styles for "In one row" layout */
+.container.row-layout .top-rows {
+    flex-direction: row;
+    height: 70vh;
+}
+
+.container.row-layout .row {
+    flex: 1 1 0;
+}
+
+.container.row-layout .input-json-data-area,
+.container.row-layout .jsonata-expression-area,
+.container.row-layout .post-jsonata-output-area,
+.container.row-layout .desired-output-area {

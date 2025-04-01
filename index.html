@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vladshra JSONata Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css" />
+
+</head>
+
+<body>
+    <div class="options-container">
+        <div class="layout-selector">
+            <label for="layout">Layout:</label>
+            <select id="layout">
+                <option value="2x2">2x2 layout</option>
+                <option value="row">In one row</option>
+            </select>
+        </div>
+
+        <div class="pair-selector">  <label for="pair">Input-Output Pair:</label>
+            <select id="pair">
+                <option value="0">Input-Output Pair #1</option>
+                <option value="1">Input-Output Pair #2</option>
+                <option value="2">Input-Output Pair #3</option>
+                <option value="3">Input-Output Pair #4</option>
+                <option value="4">Input-Output Pair #5</option>
+                <option value="5">Input-Output Pair #6</option>
+                <option value="6">Input-Output Pair #7</option>
+                <option value="7">Input-Output Pair #8</option>
+                <option value="8">Input-Output Pair #9</option>
+                <option value="9">Input-Output Pair #10</option>
+            </select>
+        </div>
+
+        <div class="template-buttons">
+            <button id="saveTemplate">Save Project</button>
+            <button id="applyTemplate">Load Project</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="top-rows">
+            <div class="row">
+                <div class="input-json-data-area">
+                    <div class="input-output-header">Input Code:</div>
+                    <div class="resizeable-editor" id="editor-container-input"></div>
+                </div>
+                <div class="jsonata-expression-area">
+                    <div class="input-output-header">Transformation Code:</div>
+                    <div class="resizeable-editor" id="editor-container-transformation-code-input"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="post-jsonata-output-area">
+                    <div class="input-output-header">Generated Output Code:</div>
+                    <div class="resizeable-editor" id="editor-container-generated-output"></div>
+                </div>
+                <div class="desired-output-area">
+                    <div class="input-output-header">Desired Output Code:</div>
+                    <div class="resizeable-editor" id="editor-container-desired-output"></div>
+                </div>
+            </div>
+        </div>
+        <div class="diff-area">
+            <label for="diff">Diff:</label>
+            <div id="diff" class="diff-container"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jsonata@2.0.6/jsonata.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.51/bundles/js/diff2html.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "inputOutputPairs": [
+    {
+      "input": "{\n  \"orders\": [\n    {\n      \"id\": 1,\n      \"customer\": \"John Doe\",\n      \"items\": [\n        {\n          \"name\": \"Laptop\",\n          \"price\": 1200\n        },\n        {\n          \"name\": \"Mouse\",\n          \"price\": 25\n        }\n      ]\n    },\n    {\n      \"id\": 2,\n      \"customer\": \"Jane Smith - diff\",\n      \"items\": [\n        {\n          \"name\": \"Keyboard\",\n          \"price\": 100\n        }\n      ]\n    }\n  ]\n}",
+      "output": "[\n  {\n    \"name\": \"Laptop - diff\",\n    \"details\": {\n      \"price\": 1200,\n      \"orderId\": \"1\",\n      \"customer\": \"John Doe\"\n    }\n  },\n  {\n    \"name\": \"Mouse\",\n    \"details\": {\n      \"price\": 25,\n      \"orderId\": \"1\",\n      \"customer\": \"John Doe\"\n    }\n  },\n  {\n    \"name\": \"Keyboard\",\n    \"details\": {\n      \"price\": 100,\n      \"orderId\": \"2\",\n      \"customer\": \"Jane Smith\"\n    }\n  }\n]"
+    },
+    {
+      "input": "{\n  \"orders\": [\n    {\n      \"id\": 3,\n      \"customer\": \"Serena Williams\",\n      \"items\": [\n        {\n          \"name\": \"Tennis ball - diff\",\n          \"price\": 5\n        },\n        {\n          \"name\": \"Tennis bag\",\n          \"price\": 250\n        }\n      ]\n    }\n  ]\n}",
+      "output": "[\n  {\n    \"name\": \"Tennis ball\",\n    \"details\": {\n      \"price\": 5,\n      \"orderId\": \"3\",\n      \"customer\": \"Serena Williams - diff\"\n    }\n  },\n  {\n    \"name\": \"Tennis bag\",\n    \"details\": {\n      \"price\": 250,\n      \"orderId\": \"3\",\n      \"customer\": \"Serena Williams\"\n    }\n  }\n]"
+    },
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": "",
+      "output": ""
+    },
+    {
+      "input": "",
+      "output": ""
+    }
+  ],
+  "transformationCode": "**.items.{\n  \"name\": name,\n  \"details\": {\n    \"price\": price,\n    \"orderId\": $string(%.id),\n    \"customer\": %.customer\n  }\n}"
+}
